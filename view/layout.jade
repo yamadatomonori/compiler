@@ -1,0 +1,15 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    // new code
+    - if (IS_PRODUCTION)
+      script(src='/javascripts/app-min.js')
+    - else
+      script(src='/closure-library/closure/goog/base.js')
+      script(src='/javascripts/app.js')
+
+  // modified
+  body(onload='my.app()')!= body
